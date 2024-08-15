@@ -59,7 +59,7 @@ for name, param in model.named_parameters():
         with open('C_h/' + name+'.h', 'w') as f:
             f.write('#ifndef ' + name + '\n')
             if name == 'conv_2_weight':
-                # 这里特殊情况特殊处理，有的层权重太多，直接输出有省略号
+                # 这里特殊情况特殊处理，有的层参数太多，直接输出有省略号
                 pass
             else:
                 f.write('float ' + Variable_Name + ' = ' + str_weight + ';')  # 运行慢的话可以改为int，
